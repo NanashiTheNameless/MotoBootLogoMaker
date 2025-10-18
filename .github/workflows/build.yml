@@ -37,12 +37,18 @@ jobs:
         run: nuget restore Moto_Logo.sln
 
       - name: Build Release
-        run: msbuild Moto_Logo.sln /t:Build /p:Platform=x64 /p:Configuration=Release /m
+        run: |
+          :: Build all combos (x86/x64, Debug/Release)
+          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Debug   /p:Platform=x86
+          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Release /p:Platform=x86
+          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Debug   /p:Platform=x64
+          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Release /p:Platform=x64
+
 
       - name: Upload Release artifacts
         uses: actions/upload-artifact@v4
         with:
           name: MotoBootLogoMaker-Release
           path: |
-            **/bin/Release/**
+            **/bin/**
           if-no-files-found: error
