@@ -14,6 +14,11 @@ jobs:
   build:
     runs-on: windows-latest
 
+    strategy:
+      matrix:
+        config: [Debug, Release]
+        platform: [x86, x64]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -36,19 +41,13 @@ jobs:
       - name: Restore packages
         run: nuget restore Moto_Logo.sln
 
-      - name: Build Release
-        run: |
-          :: Build all combos (x86/x64, Debug/Release)
-          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Debug   /p:Platform=x86
-          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Release /p:Platform=x86
-          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Debug   /p:Platform=x64
-          msbuild Moto_Logo.sln /m /t:Build /p:Configuration=Release /p:Platform=x64
-
+      - name: Build
+        run: msbuild Moto_Logo.sln /m /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
 
       - name: Upload Release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: MotoBootLogoMaker-Release
+          name: MotoBootLogoMaker-${{ matrix.config }}-${{ matrix.platform }}
           path: |
             **/bin/**
           if-no-files-found: error
