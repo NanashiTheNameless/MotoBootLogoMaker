@@ -26,6 +26,12 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
+      - name: Point MSBuild to vendored .NET 4.0 refs
+        shell: powershell
+        run: |
+          $ref = [System.IO.Path]::Combine($env:GITHUB_WORKSPACE, 'third_party', 'Microsoft.NETFramework.ReferenceAssemblies.net40', 'build', '.NETFramework', 'v4.0')
+          if (-not (Test-Path $ref)) { throw "Missing vendored v4.0 ref assemblies at $ref" }
+          "FrameworkPathOverride=$ref" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Restore packages
         run: nuget restore Moto_Logo.sln
