@@ -134,9 +134,9 @@
             this.spltStatus.Panel2.SuspendLayout();
             this.spltStatus.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // menuStrip1
-            // 
+            //
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.aboutToolStripMenuItem});
@@ -145,9 +145,9 @@
             this.menuStrip1.Size = new System.Drawing.Size(646, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
+            //
             // fileToolStripMenuItem
-            // 
+            //
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -160,105 +160,105 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
-            // 
+            //
             // newToolStripMenuItem
-            // 
+            //
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
+            //
             // toolStripMenuItem1
-            // 
+            //
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(111, 6);
-            // 
+            //
             // openToolStripMenuItem
-            // 
+            //
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
+            //
             // toolStripMenuItem3
-            // 
+            //
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(111, 6);
-            // 
+            //
             // saveToolStripMenuItem
-            // 
+            //
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
+            //
             // saveAsToolStripMenuItem
-            // 
+            //
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
+            //
             // toolStripMenuItem2
-            // 
+            //
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(111, 6);
-            // 
+            //
             // exitToolStripMenuItem
-            // 
+            //
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
+            //
             // aboutToolStripMenuItem
-            // 
+            //
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
+            //
             // spltMain
-            // 
+            //
             this.spltMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.spltMain.IsSplitterFixed = true;
             this.spltMain.Location = new System.Drawing.Point(0, 0);
             this.spltMain.Name = "spltMain";
             this.spltMain.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
+            //
             // spltMain.Panel1
-            // 
+            //
             this.spltMain.Panel1.Controls.Add(this.spltDevice);
-            // 
+            //
             // spltMain.Panel2
-            // 
+            //
             this.spltMain.Panel2.Controls.Add(this.spltImage);
             this.spltMain.Size = new System.Drawing.Size(646, 459);
             this.spltMain.SplitterDistance = 103;
             this.spltMain.TabIndex = 1;
-            // 
+            //
             // spltDevice
-            // 
+            //
             this.spltDevice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltDevice.Location = new System.Drawing.Point(0, 0);
             this.spltDevice.Name = "spltDevice";
             this.spltDevice.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
+            //
             // spltDevice.Panel1
-            // 
+            //
             this.spltDevice.Panel1.Controls.Add(this.groupBox2);
             this.spltDevice.Panel1.Controls.Add(this.groupBox1);
-            // 
+            //
             // spltDevice.Panel2
-            // 
+            //
             this.spltDevice.Panel2.Controls.Add(this.spltResolutionImageOption);
             this.spltDevice.Size = new System.Drawing.Size(646, 103);
             this.spltDevice.SplitterDistance = 47;
             this.spltDevice.TabIndex = 0;
-            // 
+            //
             // groupBox2
-            // 
+            //
             this.groupBox2.Controls.Add(this.flowLayoutPanel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(339, 0);
@@ -267,9 +267,9 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "logo.bin format";
-            // 
+            //
             // flowLayoutPanel4
-            // 
+            //
             this.flowLayoutPanel4.Controls.Add(this.rdoAndroid44);
             this.flowLayoutPanel4.Controls.Add(this.rdoAndroid43);
             this.flowLayoutPanel4.Controls.Add(this.rdoAndroidRAW);
@@ -278,9 +278,9 @@
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(301, 28);
             this.flowLayoutPanel4.TabIndex = 0;
-            // 
+            //
             // rdoAndroid44
-            // 
+            //
             this.rdoAndroid44.AutoSize = true;
             this.rdoAndroid44.Checked = true;
             this.rdoAndroid44.Location = new System.Drawing.Point(3, 3);
@@ -291,9 +291,9 @@
             this.rdoAndroid44.Text = "KitKat";
             this.rdoAndroid44.UseVisualStyleBackColor = true;
             this.rdoAndroid44.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // rdoAndroid43
-            // 
+            //
             this.rdoAndroid43.AutoSize = true;
             this.rdoAndroid43.Location = new System.Drawing.Point(62, 3);
             this.rdoAndroid43.Name = "rdoAndroid43";
@@ -302,9 +302,9 @@
             this.rdoAndroid43.Text = "540x540 Bundle";
             this.rdoAndroid43.UseVisualStyleBackColor = true;
             this.rdoAndroid43.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // rdoAndroidRAW
-            // 
+            //
             this.rdoAndroidRAW.AutoSize = true;
             this.rdoAndroidRAW.Location = new System.Drawing.Point(170, 3);
             this.rdoAndroidRAW.Name = "rdoAndroidRAW";
@@ -314,9 +314,9 @@
             this.rdoAndroidRAW.Text = "Raw 540x540";
             this.rdoAndroidRAW.UseVisualStyleBackColor = true;
             this.rdoAndroidRAW.CheckedChanged += new System.EventHandler(this.rdoAndroidRAW_CheckedChanged);
-            // 
+            //
             // groupBox1
-            // 
+            //
             this.groupBox1.Controls.Add(this.cboMoto);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -325,9 +325,9 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Motorola Device";
-            // 
+            //
             // cboMoto
-            // 
+            //
             this.cboMoto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboMoto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMoto.FormattingEnabled = true;
@@ -336,28 +336,28 @@
             this.cboMoto.Size = new System.Drawing.Size(333, 21);
             this.cboMoto.TabIndex = 1;
             this.cboMoto.SelectedIndexChanged += new System.EventHandler(this.cboMoto_SelectedIndexChanged);
-            // 
+            //
             // spltResolutionImageOption
-            // 
+            //
             this.spltResolutionImageOption.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltResolutionImageOption.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.spltResolutionImageOption.IsSplitterFixed = true;
             this.spltResolutionImageOption.Location = new System.Drawing.Point(0, 0);
             this.spltResolutionImageOption.Name = "spltResolutionImageOption";
-            // 
+            //
             // spltResolutionImageOption.Panel1
-            // 
+            //
             this.spltResolutionImageOption.Panel1.Controls.Add(this.groupBox3);
-            // 
+            //
             // spltResolutionImageOption.Panel2
-            // 
+            //
             this.spltResolutionImageOption.Panel2.Controls.Add(this.splitContainer1);
             this.spltResolutionImageOption.Size = new System.Drawing.Size(646, 52);
             this.spltResolutionImageOption.SplitterDistance = 178;
             this.spltResolutionImageOption.TabIndex = 0;
-            // 
+            //
             // groupBox3
-            // 
+            //
             this.groupBox3.Controls.Add(this.flowLayoutPanel1);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -366,9 +366,9 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Resolution";
-            // 
+            //
             // flowLayoutPanel1
-            // 
+            //
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.udResolutionX);
             this.flowLayoutPanel1.Controls.Add(this.label2);
@@ -378,18 +378,18 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(172, 33);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "X:";
-            // 
+            //
             // udResolutionX
-            // 
+            //
             this.udResolutionX.Enabled = false;
             this.udResolutionX.Location = new System.Drawing.Point(26, 3);
             this.udResolutionX.Maximum = new decimal(new int[] {
@@ -406,18 +406,18 @@
             0,
             0});
             this.udResolutionX.ValueChanged += new System.EventHandler(this.udResolutionX_ValueChanged);
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(86, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Y:";
-            // 
+            //
             // udResolutionY
-            // 
+            //
             this.udResolutionY.Enabled = false;
             this.udResolutionY.Location = new System.Drawing.Point(109, 3);
             this.udResolutionY.Maximum = new decimal(new int[] {
@@ -434,28 +434,28 @@
             0,
             0});
             this.udResolutionY.ValueChanged += new System.EventHandler(this.udResolutionY_ValueChanged);
-            // 
+            //
             // splitContainer1
-            // 
+            //
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
-            // 
+            //
             // splitContainer1.Panel1
-            // 
+            //
             this.splitContainer1.Panel1.Controls.Add(this.groupBox4);
-            // 
+            //
             // splitContainer1.Panel2
-            // 
+            //
             this.splitContainer1.Panel2.Controls.Add(this.groupBox5);
             this.splitContainer1.Size = new System.Drawing.Size(464, 52);
             this.splitContainer1.SplitterDistance = 272;
             this.splitContainer1.TabIndex = 0;
-            // 
+            //
             // groupBox4
-            // 
+            //
             this.groupBox4.Controls.Add(this.flowLayoutPanel3);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
@@ -464,9 +464,9 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Image Fill Options";
-            // 
+            //
             // flowLayoutPanel3
-            // 
+            //
             this.flowLayoutPanel3.Controls.Add(this.rdoImageCenter);
             this.flowLayoutPanel3.Controls.Add(this.rdoImageStretchAspect);
             this.flowLayoutPanel3.Controls.Add(this.rdoImageFill);
@@ -475,9 +475,9 @@
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(266, 33);
             this.flowLayoutPanel3.TabIndex = 0;
-            // 
+            //
             // rdoImageCenter
-            // 
+            //
             this.rdoImageCenter.AutoSize = true;
             this.rdoImageCenter.Checked = true;
             this.rdoImageCenter.Location = new System.Drawing.Point(3, 3);
@@ -488,9 +488,9 @@
             this.rdoImageCenter.Text = "Center";
             this.rdoImageCenter.UseVisualStyleBackColor = true;
             this.rdoImageCenter.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // rdoImageStretchAspect
-            // 
+            //
             this.rdoImageStretchAspect.AutoSize = true;
             this.rdoImageStretchAspect.Location = new System.Drawing.Point(65, 3);
             this.rdoImageStretchAspect.Name = "rdoImageStretchAspect";
@@ -499,9 +499,9 @@
             this.rdoImageStretchAspect.Text = "Stretch Proportionately";
             this.rdoImageStretchAspect.UseVisualStyleBackColor = true;
             this.rdoImageStretchAspect.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // rdoImageFill
-            // 
+            //
             this.rdoImageFill.AutoSize = true;
             this.rdoImageFill.Location = new System.Drawing.Point(203, 3);
             this.rdoImageFill.Name = "rdoImageFill";
@@ -510,9 +510,9 @@
             this.rdoImageFill.Text = "Fill";
             this.rdoImageFill.UseVisualStyleBackColor = true;
             this.rdoImageFill.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // groupBox5
-            // 
+            //
             this.groupBox5.Controls.Add(this.flowLayoutPanel5);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
@@ -521,9 +521,9 @@
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Image Orientation Options";
-            // 
+            //
             // flowLayoutPanel5
-            // 
+            //
             this.flowLayoutPanel5.Controls.Add(this.rdoLayoutPortrait);
             this.flowLayoutPanel5.Controls.Add(this.rdoLayoutLandscape);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -531,9 +531,9 @@
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(182, 33);
             this.flowLayoutPanel5.TabIndex = 0;
-            // 
+            //
             // rdoLayoutPortrait
-            // 
+            //
             this.rdoLayoutPortrait.AutoSize = true;
             this.rdoLayoutPortrait.Checked = true;
             this.rdoLayoutPortrait.Location = new System.Drawing.Point(3, 3);
@@ -544,9 +544,9 @@
             this.rdoLayoutPortrait.Text = "Portrait";
             this.rdoLayoutPortrait.UseVisualStyleBackColor = true;
             this.rdoLayoutPortrait.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // rdoLayoutLandscape
-            // 
+            //
             this.rdoLayoutLandscape.AutoSize = true;
             this.rdoLayoutLandscape.Location = new System.Drawing.Point(67, 3);
             this.rdoLayoutLandscape.Name = "rdoLayoutLandscape";
@@ -555,47 +555,47 @@
             this.rdoLayoutLandscape.Text = "Landscape";
             this.rdoLayoutLandscape.UseVisualStyleBackColor = true;
             this.rdoLayoutLandscape.CheckedChanged += new System.EventHandler(this.rdoAndroid43_CheckedChanged);
-            // 
+            //
             // spltImage
-            // 
+            //
             this.spltImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltImage.Location = new System.Drawing.Point(0, 0);
             this.spltImage.Name = "spltImage";
-            // 
+            //
             // spltImage.Panel1
-            // 
+            //
             this.spltImage.Panel1.Controls.Add(this.splitContainer2);
             this.spltImage.Panel1.Controls.Add(this.txtLogoInternalFile);
             this.spltImage.Panel1.Controls.Add(this.flowLayoutPanel2);
-            // 
+            //
             // spltImage.Panel2
-            // 
+            //
             this.spltImage.Panel2.Controls.Add(this.pictureBox1);
             this.spltImage.Size = new System.Drawing.Size(646, 352);
             this.spltImage.SplitterDistance = 188;
             this.spltImage.TabIndex = 0;
-            // 
+            //
             // splitContainer2
-            // 
+            //
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
+            //
             // splitContainer2.Panel1
-            // 
+            //
             this.splitContainer2.Panel1.Controls.Add(this.txtComments);
             this.splitContainer2.Panel1.Controls.Add(this.label3);
-            // 
+            //
             // splitContainer2.Panel2
-            // 
+            //
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Size = new System.Drawing.Size(188, 296);
             this.splitContainer2.SplitterDistance = 109;
             this.splitContainer2.TabIndex = 6;
-            // 
+            //
             // txtComments
-            // 
+            //
             this.txtComments.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtComments.Location = new System.Drawing.Point(0, 13);
             this.txtComments.MaxLength = 512;
@@ -604,9 +604,9 @@
             this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtComments.Size = new System.Drawing.Size(188, 96);
             this.txtComments.TabIndex = 1;
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
@@ -614,31 +614,31 @@
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Comments:";
-            // 
+            //
             // splitContainer3
-            // 
+            //
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
+            //
             // splitContainer3.Panel1
-            // 
+            //
             this.splitContainer3.Panel1.Controls.Add(this.label4);
             this.splitContainer3.Panel1MinSize = 1;
-            // 
+            //
             // splitContainer3.Panel2
-            // 
+            //
             this.splitContainer3.Panel2.Controls.Add(this.tvLogo);
             this.splitContainer3.Size = new System.Drawing.Size(188, 183);
             this.splitContainer3.SplitterDistance = 25;
             this.splitContainer3.SplitterWidth = 1;
             this.splitContainer3.TabIndex = 2;
-            // 
+            //
             // label4
-            // 
+            //
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(0, 0);
@@ -646,9 +646,9 @@
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Logos:";
-            // 
+            //
             // tvLogo
-            // 
+            //
             this.tvLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvLogo.Location = new System.Drawing.Point(0, 0);
             this.tvLogo.Name = "tvLogo";
@@ -657,9 +657,9 @@
             this.tvLogo.TabIndex = 0;
             this.tvLogo.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLogo_AfterSelect);
             this.tvLogo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tvLogo_MouseDoubleClick);
-            // 
+            //
             // txtLogoInternalFile
-            // 
+            //
             this.txtLogoInternalFile.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txtLogoInternalFile.Location = new System.Drawing.Point(0, 296);
             this.txtLogoInternalFile.MaxLength = 24;
@@ -667,9 +667,9 @@
             this.txtLogoInternalFile.Size = new System.Drawing.Size(188, 20);
             this.txtLogoInternalFile.TabIndex = 5;
             this.txtLogoInternalFile.TextChanged += new System.EventHandler(this.txtLogoInternalFile_TextChanged);
-            // 
+            //
             // flowLayoutPanel2
-            // 
+            //
             this.flowLayoutPanel2.Controls.Add(this.button1);
             this.flowLayoutPanel2.Controls.Add(this.button3);
             this.flowLayoutPanel2.Controls.Add(this.button2);
@@ -679,9 +679,9 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(188, 36);
             this.flowLayoutPanel2.TabIndex = 4;
             this.flowLayoutPanel2.WrapContents = false;
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 28);
@@ -689,9 +689,9 @@
             this.button1.Text = "Append";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // button3
-            // 
+            //
             this.button3.Location = new System.Drawing.Point(67, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(53, 27);
@@ -699,9 +699,9 @@
             this.button3.Text = "Extract";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
+            //
             // button2
-            // 
+            //
             this.button2.Location = new System.Drawing.Point(126, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(59, 27);
@@ -709,9 +709,9 @@
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            //
             // pictureBox1
-            // 
+            //
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -719,9 +719,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
+            //
             // statusStrip1
-            // 
+            //
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProgressBar,
@@ -731,47 +731,47 @@
             this.statusStrip1.Size = new System.Drawing.Size(646, 25);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
-            // 
+            //
             // ProgressBar
-            // 
+            //
             this.ProgressBar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(188, 19);
             this.ProgressBar.Visible = false;
-            // 
+            //
             // toolStripStatusLabel1
-            // 
+            //
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
+            //
             // openFileDialog1
-            // 
+            //
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Image files|*.bmp;*.png;*.jpg|Bin Files|*.bin|All Files|*.*";
-            // 
+            //
             // spltStatus
-            // 
+            //
             this.spltStatus.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spltStatus.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.spltStatus.IsSplitterFixed = true;
             this.spltStatus.Location = new System.Drawing.Point(0, 24);
             this.spltStatus.Name = "spltStatus";
             this.spltStatus.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
+            //
             // spltStatus.Panel1
-            // 
+            //
             this.spltStatus.Panel1.Controls.Add(this.spltMain);
-            // 
+            //
             // spltStatus.Panel2
-            // 
+            //
             this.spltStatus.Panel2.Controls.Add(this.statusStrip1);
             this.spltStatus.Size = new System.Drawing.Size(646, 488);
             this.spltStatus.SplitterDistance = 459;
             this.spltStatus.TabIndex = 3;
-            // 
+            //
             // Form1
-            // 
+            //
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

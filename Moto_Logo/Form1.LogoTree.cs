@@ -54,7 +54,7 @@ namespace Moto_Logo
             return keep;
         }
 
-        private void init_tree(bool logoboot, bool logobattery, 
+        private void init_tree(bool logoboot, bool logobattery,
             bool logounlocked, bool logolowpower, bool logounplug, bool logocharge)
         {
             var logoBoot = false;

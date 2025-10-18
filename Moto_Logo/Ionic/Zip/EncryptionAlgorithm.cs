@@ -8,20 +8,20 @@
 //
 // ------------------------------------------------------------------
 //
-// This code is licensed under the Microsoft Public License. 
+// This code is licensed under the Microsoft Public License.
 // See the file License.txt for the license details.
 // More info on: http://dotnetzip.codeplex.com
 //
 // ------------------------------------------------------------------
 //
-// last saved (in emacs): 
+// last saved (in emacs):
 // Time-stamp: <2009-October-21 17:24:45>
 //
 // ------------------------------------------------------------------
 //
 // This module defines the EncryptionAgorithm enum
 //
-// 
+//
 // ------------------------------------------------------------------
 
 

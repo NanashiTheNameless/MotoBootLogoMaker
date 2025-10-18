@@ -30,8 +30,8 @@ namespace Moto_Logo
 
         private bool _fileSaved;
         private bool _autoselectlogobinversion = true;
-        private int _maxFileSize = 32*1024*1024*50; // 32MiB for avatrn, *50 to bypass limit
-        
+        private int _maxFileSize = 32*1024*1024; // 32MiB for avatrn
+
         private readonly List<String> _loadedbitmapnames = new List<string>();
         private readonly List<Bitmap> _loadedbitmaps = new List<Bitmap>();
         private readonly List<ImageOption> _loadedbitmapimageoptions = new List<ImageOption>();
@@ -44,7 +44,7 @@ namespace Moto_Logo
 
         private Image FixedSizePreview(Image imgPhoto)
         {
-            return FixedSize(!rdoAndroid44.Checked ? FixedSize(imgPhoto, 540, 540) : imgPhoto, 
+            return FixedSize(!rdoAndroid44.Checked ? FixedSize(imgPhoto, 540, 540) : imgPhoto,
                 (int) udResolutionX.Value, (int) udResolutionY.Value,
                 !rdoAndroid44.Checked);
         }
@@ -53,7 +53,7 @@ namespace Moto_Logo
         {
             var xmax = rdoAndroid44.Checked ? (int)udResolutionX.Value : 540;
             var ymax = rdoAndroid44.Checked ? (int)udResolutionY.Value : 540;
-            return (rdoImageCenter.Checked && (imgPhoto.Width <= xmax) 
+            return (rdoImageCenter.Checked && (imgPhoto.Width <= xmax)
                     && (imgPhoto.Height <= ymax) && rdoAndroid44.Checked)
                         ? (Bitmap)imgPhoto
                         : FixedSize(imgPhoto,xmax,ymax);
@@ -112,7 +112,7 @@ namespace Moto_Logo
             grPhoto.InterpolationMode =
                     InterpolationMode.HighQualityBicubic;
 
-            
+
 
             grPhoto.DrawImage(img,
                 new Rectangle(destX, destY, destWidth, destHeight),
@@ -141,7 +141,7 @@ namespace Moto_Logo
 
         private void AddToBitmapList(Bitmap img, String filename, String logoname)
         {
-            
+
             var nodeindex = -1;
             for (var i = 0; i < tvLogo.Nodes.Count; i++)
             {
@@ -156,7 +156,7 @@ namespace Moto_Logo
             }
             try
             {
-                
+
 
                 if (_loadedbitmaps.IndexOf(img) != -1) return;
                 _loadedbitmaps.Add(img);
@@ -338,8 +338,8 @@ namespace Moto_Logo
 
         private void txtLogoInternalFile_TextChanged(object sender, EventArgs e)
         {
-            button1.Text = tvLogo.Nodes.Cast<TreeNode>().Any(node => node.Text == txtLogoInternalFile.Text) 
-                ? Resources.Replace 
+            button1.Text = tvLogo.Nodes.Cast<TreeNode>().Any(node => node.Text == txtLogoInternalFile.Text)
+                ? Resources.Replace
                 : Resources.Append;
         }
 
@@ -461,7 +461,7 @@ namespace Moto_Logo
             if (saveFileDialog2.ShowDialog() != DialogResult.OK) return;
             try
             {
-                
+
 
                 switch (Path.GetExtension(saveFileDialog2.FileName))
                 {
