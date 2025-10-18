@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Moto_Logo</RootNamespace>
-    <AssemblyName>Moto_Boot_Logo_Maker</AssemblyName>
+    <AssemblyName>MotoBootLogoMaker</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
