@@ -30,7 +30,7 @@ namespace Moto_Logo
 
         private bool _fileSaved;
         private bool _autoselectlogobinversion = true;
-        private int _maxFileSize = 32*1024*1024*63; // 32MiB for avatrn, *63 to bypass limit
+        private int _maxFileSize = 32*1024*1024*50; // 32MiB for avatrn, *50 to bypass limit
         
         private readonly List<String> _loadedbitmapnames = new List<string>();
         private readonly List<Bitmap> _loadedbitmaps = new List<Bitmap>();

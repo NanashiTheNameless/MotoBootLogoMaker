@@ -374,12 +374,11 @@ namespace Moto_Logo
                         writer.Write(tempoffset);
                         writer.Write(tempsize);
                         writer.BaseStream.Position = writer.BaseStream.Length;
-                        if (writer.BaseStream.Length <= _maxFileSize && false) continue;
+                        if (writer.BaseStream.Length <= _maxFileSize ) continue;
                         toolStripStatusLabel1.Text =
                             @"Error: Images/options selected will not fit in logo.bin, Failed at " +
                             tvLogo.Nodes[i].Text + @" Produced file is " +
                             (writer.BaseStream.Length - _maxFileSize) + @" Bytes Too Large";
-                        return;
                     }
                 }
             }
