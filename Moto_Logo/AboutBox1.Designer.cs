@@ -156,7 +156,6 @@
             // pictureBox1
             //
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Moto_Logo.Properties.Resources.bitcoin_qr;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(413, 131);
             this.pictureBox1.Name = "pictureBox1";

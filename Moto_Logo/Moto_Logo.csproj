@@ -166,7 +166,6 @@
     <None Include="Ionic\Zip\Migrated rules for Zip DLL.ruleset" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bitcoin qr only.png" />
     <Content Include="logo_battery.png" />
     <None Include="logo_charge.png" />
     <None Include="logo_boot.png" />
