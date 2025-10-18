@@ -346,7 +346,7 @@ namespace Moto_Logo
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var temp = Settings.Default.MotoDevice;
-            openFileDialog1.Filter = @"Logo Files|*.bin;*.zip|Bin Files|*.bin|Flashable Zip files|*.zip|All Files|*.*";
+            openFileDialog1.Filter = @"Logo Files|*.bin|Bin Files|*.bin|All Files|*.*";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
             OpenFile(openFileDialog1.FileName);
             Settings.Default.MotoDevice = temp;
