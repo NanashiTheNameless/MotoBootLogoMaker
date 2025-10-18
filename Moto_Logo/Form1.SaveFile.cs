@@ -230,7 +230,7 @@ namespace Moto_Logo
                     }
                     var sectorfillstr = Encoding.ASCII.GetBytes("*---==|This Boot logo was created with \"" +
                                     Application.ProductName + " " +
-                                    Application.ProductVersion + "\" written by CaitSith2|==---*");
+                                    Application.ProductVersion + "\" written by CaitSith2 And Modified by NanashiTheNameless|==---*");
                     writer.Write(-2);
                     var cboMotoItem = (string)cboMoto.SelectedItem;
                     writer.Write(Encoding.UTF8.GetBytes(cboMotoItem).Length);
