@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Motorola Boot Logo Maker")]
-[assembly: AssemblyCopyright("Copyright ©  2014-2015 CaitSith2 (Modified by NanashiTheNameless)")]
+[assembly: AssemblyCopyright("Copyright ©  2014-2015 CaitSith2")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
