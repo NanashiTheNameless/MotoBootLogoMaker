@@ -382,6 +382,7 @@ namespace Moto_Logo
         private void Form1_Load(object sender, EventArgs e)
         {
             Init_cboMoto("Custom",720,1280,4194304,0x3FFFFFFF);
+            Init_cboMoto("Moto Edge 2024 (Avatrn)", 1080, 2400, 4194304, (int)(LOGO.LOGO_BOOT | LOGO.LOGO_BATTERY | LOGO.LOGO_LOWPOWER | LOGO.LOGO_CHARGE));
             Init_cboMoto("Moto X Style (3rd Gen)", 1440, 2560, 8388608, (int)(LOGO.LOGO_BOOT | LOGO.LOGO_BATTERY | LOGO.LOGO_UNLOCKED | LOGO.LOGO_LOWPOWER | LOGO.LOGO_CHARGE));
             Init_cboMoto("Moto X Play (3rd Gen)", 1080, 1920, 6291456, (int)(LOGO.LOGO_BOOT | LOGO.LOGO_BATTERY | LOGO.LOGO_UNLOCKED | LOGO.LOGO_LOWPOWER | LOGO.LOGO_CHARGE));
             Init_cboMoto("Moto X (2nd Gen)", 1080, 1920, 4194304, (int)(LOGO.LOGO_BOOT | LOGO.LOGO_BATTERY | LOGO.LOGO_UNLOCKED | LOGO.LOGO_LOWPOWER | LOGO.LOGO_CHARGE));
