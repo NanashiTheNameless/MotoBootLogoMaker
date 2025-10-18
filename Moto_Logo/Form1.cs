@@ -346,7 +346,7 @@ namespace Moto_Logo
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var temp = Settings.Default.MotoDevice;
-            openFileDialog1.Filter = @"Logo Files|*.zip;*.bin|Bin Files|*.bin|Flashable Zip files|*.zip|All Files|*.*";
+            openFileDialog1.Filter = @"Logo Files|*.bin;*.zip|Bin Files|*.bin|Flashable Zip files|*.zip|All Files|*.*";
             if (openFileDialog1.ShowDialog() != DialogResult.OK) return;
             OpenFile(openFileDialog1.FileName);
             Settings.Default.MotoDevice = temp;
@@ -516,7 +516,7 @@ namespace Moto_Logo
             e.Effect = DragDropEffects.None;
             if (!e.Data.GetDataPresent(DataFormats.FileDrop)) return;
             var files = (string[]) e.Data.GetData(DataFormats.FileDrop);
-            if((files.Count() == 1) && ((Path.GetExtension(files[0]) == ".bin") || 
+            if((files.Count() == 1) && ((Path.GetExtension(files[0]) == ".bin") ||
                                         (Path.GetExtension(files[0]) == ".zip")))
                 e.Effect = DragDropEffects.Copy;
         }
