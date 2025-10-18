@@ -26,11 +26,6 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # Install .NET Framework 4.0 Targeting Pack (Developer Pack) so MSBuild can find v4.0 reference assemblies
-      - name: Install .NET Framework 4.0 Targeting Pack
-        shell: powershell
-        run: |
-          choco install -y netfx-4.0.3-devpack
 
       - name: Restore packages
         run: nuget restore Moto_Logo.sln
