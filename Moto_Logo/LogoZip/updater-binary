@@ -1,0 +1,182 @@
+#!/sbin/sh
+# TWRP-compatible update-binary (shell) to flash logo.bin to logo(_a/_b) on A/B Qualcomm devices.
+# Usage (invoked by recovery): update-binary <api> <outfd> <zipfile>
+
+set -eu
+
+API="${1:-3}"
+OUTFD_RAW="${2:-1}"
+ZIPFILE="${3:-/sdcard/flash.zip}"
+
+# ---------- UI helpers ----------
+detect_outfd() {
+  # Many recoveries pass an integer FD in $2. Verify it's a valid fd; otherwise, try fallbacks.
+  if [ -e "/proc/self/fd/$OUTFD_RAW" ] 2>/dev/null; then
+    echo "$OUTFD_RAW"
+    return
+  fi
+  # Fallback: try common FDs
+  for fd in 3 2 1; do
+    if [ -e "/proc/self/fd/$fd" ] 2>/dev/null; then
+      echo "$fd"
+      return
+    fi
+  done
+  # Last resort (won't show in UI, but avoids hard failure)
+  echo "1"
+}
+
+OUTFD="$(detect_outfd)"
+
+ui_print() {
+  # Print to recovery UI pipe if we have it; also echo to stdout as a fallback.
+  if [ -e "/proc/self/fd/$OUTFD" ] 2>/dev/null; then
+    # ui_print requires a blank line after each message
+    printf 'ui_print %s\n' "$*" >"/proc/self/fd/$OUTFD"
+    printf 'ui_print\n' >"/proc/self/fd/$OUTFD"
+  fi
+  echo "$*" >/dev/null
+}
+
+set_progress() {
+  if [ -e "/proc/self/fd/$OUTFD" ] 2>/dev/null; then
+    printf 'set_progress %s\n' "$1" >"/proc/self/fd/$OUTFD"
+  fi
+}
+
+abort_install() {
+  ui_print "Error: $*"
+  exit 1
+}
+
+# ---------- Zip extraction ----------
+WORKDIR="/tmp/logo_flash"
+rm -rf "$WORKDIR"
+mkdir -p "$WORKDIR"
+
+have_cmd() { command -v "$1" >/dev/null 2>&1; }
+
+extract_logo() {
+  ui_print "• Locating logo.bin in ZIP…"
+  if have_cmd unzip; then
+    if ! unzip -l "$ZIPFILE" 'logo.bin' >/dev/null 2>&1; then
+      abort_install "logo.bin not found at ZIP root."
+    fi
+    ui_print "• Extracting logo.bin…"
+    unzip -o "$ZIPFILE" 'logo.bin' -d "$WORKDIR" >/dev/null
+  elif have_cmd busybox && busybox unzip -hh >/dev/null 2>&1; then
+    if ! busybox unzip -l "$ZIPFILE" 'logo.bin' >/dev/null 2>&1; then
+      abort_install "logo.bin not found at ZIP root."
+    fi
+    ui_print "• Extracting logo.bin (busybox)…"
+    busybox unzip -o "$ZIPFILE" 'logo.bin' -d "$WORKDIR" >/dev/null
+  else
+    abort_install "No unzip available in recovery environment."
+  fi
+
+  [ -f "$WORKDIR/logo.bin" ] || abort_install "Extraction failed: logo.bin missing after unzip."
+}
+
+# ---------- Partition discovery ----------
+BYNAME_CANDIDATES="
+/dev/block/bootdevice/by-name
+/dev/block/platform/*/by-name
+/dev/block/*/by-name
+"
+
+find_part() {
+  # $1 = base name (e.g., logo, splash)
+  # returns first match path via stdout; exits nonzero if none
+  local name="$1"
+  for base in $BYNAME_CANDIDATES; do
+    for d in $base; do
+      [ -d "$d" ] || continue
+      # Prefer A/B naming if present
+      if [ -e "$d/${name}_a" ] || [ -e "$d/${name}_b" ]; then
+        echo "$d/${name}_a|$d/${name}_b"
+        return 0
+      fi
+      # Single-slot fallback
+      if [ -e "$d/$name" ]; then
+        echo "$d/$name"
+        return 0
+      fi
+    done
+  done
+  return 1
+}
+
+resolve_targets() {
+  # Try logo first, then splash (some vendors use splash)
+  local found=""
+  if out="$(find_part logo 2>/dev/null)"; then
+    found="$out"
+  elif out="$(find_part splash 2>/dev/null)"; then
+    found="$out"
+  else
+    abort_install "Could not locate logo/splash partition under by-name."
+  fi
+
+  # Expand pipe-separated list to space-separated unique targets
+  echo "$found" | tr '|' ' '
+}
+
+# ---------- Size checks and flashing ----------
+filesize() { stat -c '%s' "$1" 2>/dev/null || wc -c <"$1"; }
+partsize() { blockdev --getsize64 "$1" 2>/dev/null || echo 0; }
+
+flash_to_part() {
+  # $1 = partition path, $2 = image path
+  local part="$1" img="$2"
+  local ps fs
+  ps="$(partsize "$part")" || ps=0
+  fs="$(filesize "$img")" || fs=0
+
+  [ "$ps" -gt 0 ] || abort_install "Cannot determine size for $part."
+  if [ "$fs" -gt "$ps" ]; then
+    abort_install "logo.bin ($fs bytes) is larger than $part ($ps bytes)."
+  fi
+
+  ui_print "• Writing $(basename "$img") to $(basename "$part")…"
+  # Use a reasonable block size and ensure data is flushed
+  if dd if="$img" of="$part" bs=4M conv=fsync,notrunc status=none 2>/dev/null; then
+    sync
+    ui_print "  ✔ Flashed $(basename "$part")"
+  else
+    abort_install "dd failed for $part."
+  fi
+}
+
+# ---------- Main ----------
+ui_print "========================================"
+ui_print "   Motorola/Qualcomm Logo Flasher (A/B) "
+ui_print "========================================"
+set_progress 0.05
+
+extract_logo
+IMG="$WORKDIR/logo.bin"
+set_progress 0.15
+
+TARGETS="$(resolve_targets)"
+ui_print "• Target partitions: $TARGETS"
+set_progress 0.25
+
+# If A/B present, write to both; otherwise single target
+for tgt in $TARGETS; do
+  [ -e "$tgt" ] || abort_install "Partition path not found: $tgt"
+done
+
+# Do the flashing
+count=0
+total=$(echo "$TARGETS" | wc -w | awk '{print $1}')
+for tgt in $TARGETS; do
+  count=$((count + 1))
+  # Progress from 0.25 -> 0.95 during flashing
+  prog=$(awk -v c="$count" -v t="$total" 'BEGIN{print 0.25 + (0.70*(c/t))}')
+  set_progress "$prog"
+  flash_to_part "$tgt" "$IMG"
+done
+
+set_progress 1.0
+ui_print "• Done. You may now reboot."
+exit 0
