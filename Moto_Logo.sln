@@ -26,7 +26,7 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		BuildVersion_UseGlobalSettings = True
 		BuildVersion_AssemblyInfoFilename = Moto_Logo\Properties\AssemblyInfo.cs
-		BuildVersion_StartDate = 2025/10/18
+		BuildVersion_StartDate = 2014/8/25
 		BuildVersion_UpdateFileVersion = True
 		BuildVersion_UpdateAssemblyVersion = True
 		BuildVersion_BuildVersioningStyle = None.None.MonthAndDayStamp.TimeStamp
