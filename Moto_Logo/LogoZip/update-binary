@@ -1,4 +1,4 @@
-#!/sbin/sh
+#!/system/bin/sh
 # TWRP-compatible update-binary (shell) to flash logo.bin to logo(_a/_b) on A/B Qualcomm devices.
 # Usage (invoked by recovery): update-binary <api> <outfd> <zipfile>
 
