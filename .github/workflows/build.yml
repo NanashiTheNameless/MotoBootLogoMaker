@@ -86,7 +86,7 @@ jobs:
           ls -l _to_release
 
       - name: Update release tag
-        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') }}
         uses: NanashiTheNameless/action-create-tag@main
         with:
           tag: "Nightly-Rolling"
