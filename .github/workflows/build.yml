@@ -80,12 +80,31 @@ jobs:
         run: |
           set -euxo pipefail
           mkdir -p _to_release
-          # Zip each artifact directory separately for clean attachments
+          shopt -s nullglob
+
           for d in _dl/*; do
             [ -d "$d" ] || continue
-            base="$(basename "$d")"
-            zip -r "_to_release/${base}.zip" "$d"
+            base="$(basename "$d")"   # e.g. MotoBootLogoMaker-Release-x86
+            exe="$(find "$d" -type f -name 'MotoBootLogoMaker.exe' | head -n1 || true)"
+
+            if [ -z "${exe}" ]; then
+              echo "WARN: No MotoBootLogoMaker.exe found in $d — skipping"
+              continue
+            fi
+
+            bindir="$(dirname "$exe")"
+            cfg="${bindir}/MotoBootLogoMaker.exe.config"
+            out="_to_release/${base}.zip"
+
+            if [ -f "$cfg" ]; then
+              # -j “junk paths” so the files are at archive root
+              zip -j "$out" "$exe" "$cfg"
+            else
+              echo "NOTE: No .config next to executable in $bindir; zipping exe only."
+              zip -j "$out" "$exe"
+            fi
           done
+
           ls -l _to_release
 
       - name: Update release tag
