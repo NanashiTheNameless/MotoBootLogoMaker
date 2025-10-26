@@ -112,8 +112,8 @@ jobs:
         with:
           upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
           release_id: "257324864"
-          asset_path: _to_release/MotoBootLogoMaker-Release-x64.zip
-          asset_name: MotoBootLogoMaker-Release-x64.zip
+          asset_path: "_to_release/MotoBootLogoMaker-Release-x64.zip"
+          asset_name: "MotoBootLogoMaker-Release-x64.zip"
           asset_content_type: application/zip
           ignore_hash: true
 
@@ -122,8 +122,8 @@ jobs:
         with:
           upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
           release_id: "257324864"
-          asset_path: _to_release/MotoBootLogoMaker-Release-x86.zip
-          asset_name: MotoBootLogoMaker-Release-x86.zip
+          asset_path: "_to_release/MotoBootLogoMaker-Release-x86.zip"
+          asset_name: "MotoBootLogoMaker-Release-x86.zip"
           asset_content_type: application/zip
           ignore_hash: true
 
@@ -132,8 +132,8 @@ jobs:
         with:
           upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
           release_id: "257324864"
-          asset_path: _to_release/MotoBootLogoMaker-Debug-x64.zip
-          asset_name: MotoBootLogoMaker-Debug-x64.zip
+          asset_path: "_to_release/MotoBootLogoMaker-Debug-x64.zip"
+          asset_name: "MotoBootLogoMaker-Debug-x64.zip"
           asset_content_type: application/zip
           ignore_hash: true
 
@@ -142,8 +142,8 @@ jobs:
         with:
           upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
           release_id: "257324864"
-          asset_path: _to_release/MotoBootLogoMaker-Debug-x86.zip
-          asset_name: MotoBootLogoMaker-Debug-x86.zip
+          asset_path: "_to_release/MotoBootLogoMaker-Debug-x86.zip"
+          asset_name: "MotoBootLogoMaker-Debug-x86.zip"
           asset_content_type: application/zip
           ignore_hash: true
 
