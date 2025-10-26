@@ -107,15 +107,6 @@ jobs:
 
           ls -l _to_release
 
-      - name: Update release tag
-        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') }}
-        uses: NanashiTheNameless/action-create-tag@main
-        with:
-          tag: "Nightly-Rolling"
-          tag_exists_error: false
-          force_push_tag: true
-          message: "Nightly-Rolling"
-
       - name: Upload MotoBootLogoMaker-Release-x64.zip
         uses: WebFreak001/deploy-nightly@1190b6528ddeb47dbdd46c8fde68b0e57dc7686b
         with:
@@ -156,3 +147,11 @@ jobs:
           asset_content_type: application/zip
           ignore_hash: true
 
+      - name: Update release tag
+        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') }}
+        uses: NanashiTheNameless/action-create-tag@main
+        with:
+          tag: "Nightly-Rolling"
+          tag_exists_error: false
+          force_push_tag: true
+          message: "Nightly-Rolling"
