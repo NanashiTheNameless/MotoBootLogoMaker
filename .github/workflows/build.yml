@@ -10,6 +10,13 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: write
+
+env:
+  ROLLING_TAG: Nightly-Rolling
+  ARTIFACT_PREFIX: MotoBootLogoMaker
+
 jobs:
   build:
     runs-on: windows-latest
@@ -47,7 +54,44 @@ jobs:
       - name: Upload Release artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: MotoBootLogoMaker-${{ matrix.config }}-${{ matrix.platform }}
+          name: ${{ env.ARTIFACT_PREFIX }}-${{ matrix.config }}-${{ matrix.platform }}
           path: |
             **/bin/**
           if-no-files-found: error
+
+  publish:
+    name: Publish Nightly-Rolling
+    runs-on: ubuntu-latest
+    needs: [build]
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')) }}
+
+    steps:
+      - name: Download all build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: ${{ env.ARTIFACT_PREFIX }}-*
+          path: _dl
+          merge-multiple: false
+
+      - name: Pack artifacts for release
+        run: |
+          set -euxo pipefail
+          mkdir -p _to_release
+          sha8="$(git rev-parse --short=8 HEAD || echo unknown)"
+          ts="$(date -u +'%Y%m%dT%H%M%SZ')"
+          # Zip each artifact directory separately for clean attachments
+          for d in _dl/*; do
+            [ -d "$d" ] || continue
+            base="$(basename "$d")"
+            zip -r "_to_release/${base}-${sha8}-${ts}.zip" "$d"
+          done
+          ls -l _to_release
+
+      - name: Update release tag
+        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && (inputs.os == 'ubuntu-24.04') && github.ref == 'refs/heads/main' }}
+        uses: NanashiTheNameless/action-create-tag@main
+        with:
+          tag: "Nightly-Rolling"
+          tag_exists_error: false
+          force_push_tag: true
+          message: "Nightly-Rolling"
