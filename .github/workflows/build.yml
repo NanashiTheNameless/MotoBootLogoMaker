@@ -77,18 +77,16 @@ jobs:
         run: |
           set -euxo pipefail
           mkdir -p _to_release
-          sha8="$(git rev-parse --short=8 HEAD || echo unknown)"
-          ts="$(date -u +'%Y%m%dT%H%M%SZ')"
           # Zip each artifact directory separately for clean attachments
           for d in _dl/*; do
             [ -d "$d" ] || continue
             base="$(basename "$d")"
-            zip -r "_to_release/${base}-${sha8}-${ts}.zip" "$d"
+            zip -r "_to_release/${base}.zip" "$d"
           done
           ls -l _to_release
 
       - name: Update release tag
-        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && (inputs.os == 'ubuntu-24.04') && github.ref == 'refs/heads/main' }}
+        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
         uses: NanashiTheNameless/action-create-tag@main
         with:
           tag: "Nightly-Rolling"
