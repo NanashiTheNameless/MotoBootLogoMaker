@@ -52,7 +52,7 @@ jobs:
         run: msbuild Moto_Logo.sln /m /t:Build /p:Configuration=${{ matrix.config }} /p:Platform=${{ matrix.platform }}
 
       - name: Upload Release artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ env.ARTIFACT_PREFIX }}-${{ matrix.config }}-${{ matrix.platform }}
           path: |
@@ -67,10 +67,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download all build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           pattern: ${{ env.ARTIFACT_PREFIX }}-*
           path: _dl
@@ -115,3 +115,44 @@ jobs:
           tag_exists_error: false
           force_push_tag: true
           message: "Nightly-Rolling"
+
+      - name: Upload MotoBootLogoMaker-Release-x64.zip
+        uses: WebFreak001/deploy-nightly@1190b6528ddeb47dbdd46c8fde68b0e57dc7686b
+        with:
+          upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
+          release_id: "257324864"
+          asset_path: _to_release/MotoBootLogoMaker-Release-x64.zip
+          asset_name: MotoBootLogoMaker-Release-x64.zip
+          asset_content_type: application/zip
+          ignore_hash: true
+
+      - name: Upload MotoBootLogoMaker-Release-x86.zip
+        uses: WebFreak001/deploy-nightly@1190b6528ddeb47dbdd46c8fde68b0e57dc7686b
+        with:
+          upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
+          release_id: "257324864"
+          asset_path: _to_release/MotoBootLogoMaker-Release-x86.zip
+          asset_name: MotoBootLogoMaker-Release-x86.zip
+          asset_content_type: application/zip
+          ignore_hash: true
+
+      - name: Upload MotoBootLogoMaker-Debug-x64.zip
+        uses: WebFreak001/deploy-nightly@1190b6528ddeb47dbdd46c8fde68b0e57dc7686b
+        with:
+          upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
+          release_id: "257324864"
+          asset_path: _to_release/MotoBootLogoMaker-Debug-x64.zip
+          asset_name: MotoBootLogoMaker-Debug-x64.zip
+          asset_content_type: application/zip
+          ignore_hash: true
+
+      - name: Upload MotoBootLogoMaker-Debug-x86.zip
+        uses: WebFreak001/deploy-nightly@1190b6528ddeb47dbdd46c8fde68b0e57dc7686b
+        with:
+          upload_url: "https://uploads.github.com/repos/NanashiTheNameless/MotoBootLogoMaker/releases/257324864/assets"
+          release_id: "257324864"
+          asset_path: _to_release/MotoBootLogoMaker-Debug-x86.zip
+          asset_name: MotoBootLogoMaker-Debug-x86.zip
+          asset_content_type: application/zip
+          ignore_hash: true
+
